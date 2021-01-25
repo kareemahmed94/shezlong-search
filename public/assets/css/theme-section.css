@@ -1,0 +1,157 @@
+
+* {
+    font-family: 'Cairo', sans-serif!important;
+    font-weight: 400;
+}
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: right;
+    background-color: #fff;
+}
+
+/*nav*/
+.main-nav {
+    padding: 0 18% 0 12%;
+}
+
+/*footer*/
+.footer {
+    background: #3591a6;
+    min-height: 262px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.footer .column .title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.footer .column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+}
+.footer .column ul li {
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/*header*/
+.therapist-header {
+    background-color: #3da8c0;
+    padding: 2%;
+}
+.steps {
+
+}
+.steps .step-title{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px
+}
+.steps .step.active{
+    color: #3da8c0;
+    background: #fff;
+}
+.steps .step{
+    border: 1.5px solid #fff;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 2px 10px;
+}
+.steps .line {
+    padding: 0;
+}
+.steps .line:before {
+    height: 1px;
+    content: "";
+    background: #fff;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+}
+
+/*search bar*/
+
+.search-bar {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.search-icon .form-control {
+    border-right: 0!important;
+    font-size: 16px!important;
+    height: 100%!important;
+
+}
+.search-icon .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+}
+.search-icon .form-select {
+    border-right: 0!important;
+    font-size: 16px!important;
+    height: 100%!important;
+}
+.search-icon .form-select:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+}
+.search-icon .input-group-text {
+    border-left: 0!important;
+    background-color: white;
+}
+
+/*filter bar*/
+
+
+
+/*cards*/
+.pointer:hover {
+    cursor: pointer;
+}
+.recommendation-card {
+    min-height: 365px;
+    border: 1px solid #ccc!important;
+    background-color: #3da8c0;
+    height: 100%!important;
+
+}
+.recommendation-content {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+.recommendation-content div{
+    font-size: 16px;
+    font-weight: bold;
+}
+.recommendation-card .recommended-image{
+    transform: scaleX(-1);
+}
+.recommendation-btn {
+    padding: 8px 30px 8px 32px;
+    border-radius: 22px;
+    background-color: #f4794c;
+    font-size: 14px!important;
+    color: white;
+    text-align: center;
+}
