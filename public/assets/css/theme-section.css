@@ -10,13 +10,11 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: right;
-    background-color: #fff;
+    background: #f4f6f9!important;
 }
 
 /*nav*/
-.main-nav {
-    padding: 0 18% 0 12%;
-}
+
 
 /*footer*/
 .footer {
@@ -41,6 +39,10 @@ body {
     margin-top: 8px;
     cursor: pointer;
 }
+/*==========================================*/
+/*SEARCH PAGE */
+/*==========================================*/
+
 
 /*header*/
 .therapist-header {
@@ -155,3 +157,110 @@ body {
     color: white;
     text-align: center;
 }
+/*Therapist card*/
+
+.doctor-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    text-align: center;
+}
+.doctor-card .therapist-details{
+    padding: 16px 10px 16px 10px;
+}
+.doctor-card .name {
+    white-space: nowrap;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3da8c0;
+    font-size: 16px;
+}
+.doctor-card .title {
+    font-size: 12px;
+    color: #666669;
+    min-height: 36px;
+    margin-top: 8px;
+}
+.doctor-card .rate {
+
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.yellow_stars .fa {
+    color: yellow;
+}
+.doctor-card .rate-value{
+    margin-left: 5px;
+    font-size: 12px;
+}
+.doctor-card .rate-count{
+    color: #4d4d4f;
+    font-size: 12px;
+
+}
+.doctor-card .rating-container {
+    position: relative;
+}
+.doctor-card .profile-pic-container {
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+}
+.doctor-card .profile-pic-container .pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.doctor-card .speciality {
+    color: #4d4d4f;
+    font-size: 12px;
+    min-height: 36px;
+    margin-top: 8px;
+}
+.doctor-card .session-details {
+    margin-top: 15px;
+}
+.doctor-card .sessions {
+    color: #666669;
+    font-size: 12px;
+    margin-right: 30px;
+}
+.doctor-card .fees {
+    color: #4d4d4f;
+    font-size: 14px;
+}
+.doctor-card .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.doctor-card .buttons div.book {
+    background: #3da8c0;
+    color: #fff;
+}
+.doctor-card .buttons div.view-profile {
+    background: #ccc;
+    color: #4d4d4f;
+    font-size: 12px!important;
+}
+.doctor-card .buttons .book {
+    background: #3da8c0;
+    color: #fff;
+    font-size: 13px!important;
+
+}
+.doctor-card .buttons div.view-profile {
+    background: #ccc;
+    color: #4d4d4f;
+}
+.doctor-card .buttons div {
+    width: 50%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+

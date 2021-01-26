@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
+    <div class="container">
 
         <div class="main-nav collapse navbar-collapse" id="navbarSupportedContent">
 
