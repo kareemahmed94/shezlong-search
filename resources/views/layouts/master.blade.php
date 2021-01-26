@@ -13,8 +13,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.rtl.min.css"
           integrity="sha384-mUkCBeyHPdg0tqB6JDd+65Gpw5h/l8DKcCTV2D2UpaMMFd7Jo8A+mDAosaWgFBPl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
-    <title>مرحبا بالعالم!</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+
+    <title>Talk to your therapist online privately anytime anywhere | تكلم مع طبيب نفسي أون لاين بكل سرية وخصوصية
+    </title>
+    <meta name="title" content="Talk to your therapist online privately anytime anywhere | تكلم مع طبيب نفسي أون لاين بكل
+            سرية وخصوصية">
+    <meta name="description" content="Shezlong is the first online platform in MENA that can help book online mental sessions
+            from anywhere at anytime">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <body>
 @include('layouts.nav')
@@ -23,17 +32,12 @@
 @include('layouts.footer')
 <!-- Optional JavaScript; choose one of the two! -->
 
-<!-- Option 1: Bootstrap Bundle with Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-<script defer src="{{ asset('assets/css/fontawesome/js/all.js') }}"></script> <!--load all styles -->
-
-<!-- Option 2: Separate Popper.js and Bootstrap JS -->
-<!--
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
--->
+<script defer src="{{ asset('assets/css/fontawesome/js/all.js') }}"></script> <!--load all styles -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+
 @yield('script')
 
 </body>

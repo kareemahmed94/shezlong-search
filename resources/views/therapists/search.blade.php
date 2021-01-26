@@ -398,7 +398,6 @@
                             </div>
                             <div class="filter mt35">
                                 <div class="d-flex align-items-center text-blue d-flex align-items-center">
-                                    <svg-icon src="assets/images/search/language.svg" class="mr8 filter-icon">
                                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50"
                                              style="width: 25px;">
@@ -450,47 +449,27 @@
                                             <path class="cls-5-lang"
                                                   d="M25,1A24,24,0,1,1,1,25,24,24,0,0,1,25,1m0-1A25,25,0,1,0,50,25,25,25,0,0,0,25,0Z"></path>
                                         </svg>
-                                    </svg-icon>
                                     <span class="fz14">اللغة والبلد</span></div>
                                 <div class="mt12">
-                                    <mat-select role="combobox" aria-autocomplete="none" aria-haspopup="true"
-                                                multiple=""
-                                                class="mat-select form-control ng-tns-c163-3 mat-select-empty mat-select-multiple"
-                                                placeholder="اختار اللغة" aria-labelledby=" mat-select-value-5"
-                                                id="mat-select-4" tabindex="0" aria-expanded="false"
-                                                aria-required="false" aria-disabled="false" aria-invalid="false">
-                                        <div cdk-overlay-origin="" class="mat-select-trigger ng-tns-c163-3">
-                                            <div class="mat-select-value ng-tns-c163-3" id="mat-select-value-5"><span
-                                                    class="mat-select-placeholder ng-tns-c163-3 ng-star-inserted">اختار اللغة</span>
-                                            </div>
-                                            <div class="mat-select-arrow-wrapper ng-tns-c163-3">
-                                                <div class="mat-select-arrow ng-tns-c163-3"></div>
-                                            </div>
-                                        </div>
-                                    </mat-select>
+                                    <select class="selectpicker" multiple>
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </select>
+
                                 </div>
                                 <div class="mt12">
-                                    <mat-select role="combobox" aria-autocomplete="none" aria-haspopup="true"
-                                                multiple=""
-                                                class="mat-select form-control ng-tns-c163-4 mat-select-empty mat-select-multiple"
-                                                placeholder="اخنار البلد" aria-labelledby=" mat-select-value-7"
-                                                id="mat-select-6" tabindex="0" aria-expanded="false"
-                                                aria-required="false" aria-disabled="false" aria-invalid="false">
-                                        <div cdk-overlay-origin="" class="mat-select-trigger ng-tns-c163-4">
-                                            <div class="mat-select-value ng-tns-c163-4" id="mat-select-value-7"><span
-                                                    class="mat-select-placeholder ng-tns-c163-4 ng-star-inserted">اخنار البلد</span>
-                                            </div>
-                                            <div class="mat-select-arrow-wrapper ng-tns-c163-4">
-                                                <div class="mat-select-arrow ng-tns-c163-4"></div>
-                                            </div>
-                                        </div>
-                                    </mat-select>
+                                    <select class="selectpicker" multiple>
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </select>
+
                                 </div>
                             </div>
                             <div class="filter mt35">
                                 <div class="d-flex align-items-center text-blue d-flex align-items-center">
-                                    <svg-icon class="mr8 filter-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 26"
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 26"
                                              style="width: 25px;">
                                             <defs>
                                                 <style>.cls-1-fees {
@@ -541,7 +520,6 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                    </svg-icon>
                                     <span class="fz14">تكلفة الجلسة (جنيه)</span></div>
                                 <div class="mt12 fz12 fees-filter ng-star-inserted">
                                     <div class="p4 brs2 mr12 mt8 d-inline-block pointer bg-off-white text-dark1"> Less
@@ -714,4 +692,9 @@
 @stop
 
 @section('script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example-getting-started').multiselect();
+        });
+    </script>
 @stop
