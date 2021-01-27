@@ -93,16 +93,17 @@ body {
 
 .search-icon .form-control {
     border-right: 0!important;
+}
+.form-control {
     font-size: 16px!important;
     height: 100%!important;
-
 }
-.search-icon .form-control:focus {
+.form-control:focus {
     color: #212529;
     background-color: #fff;
     border-color: #ced4da;
     outline: 0;
-    box-shadow: none;
+    box-shadow: none!important;
 }
 .search-icon .form-select {
     border-right: 0!important;
@@ -264,3 +265,201 @@ body {
     cursor: pointer;
 }
 
+/*Side bar search*/
+
+.filters-container {
+    min-height: 100vh;
+    box-shadow: 0 0 2px rgba(0,0,0,.16);
+    background-color: white;
+}
+.filters-container .filters-header{
+    padding: 8px 16px 8px 16px;
+    background: #3da8c0;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.filters-container .filters-body{
+    padding: 20px 16px 100px 16px;
+}
+
+.filters-container .filters-body .filters-title{
+    font-size:14px;color: #3da8c0;
+}
+
+.filters-container .filters-body .date-check{
+    margin-top: 16px;
+    align-items: center;
+}
+.filters-container .filters-body input[type=checkbox]{
+    box-sizing: border-box;
+    padding: 0;
+    bottom: 0;
+    border: 2px #8a8a8a solid;
+    overflow: hidden;
+    border-radius: 1px;
+}
+.filters-container .filters-body input[type=checkbox]:focus{
+    outline: none!important;
+    box-shadow: none!important;
+}
+.filters-container .filters-body label{
+    line-height: 24px;
+    color: #4d4d4f;
+    font-size: 14px;
+
+}
+.filters-container .filters-body .filter-date{
+     margin-top: 16px;
+ }
+.filters-container .filters-body .filter-name{
+    color: #4d4d4f;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.filters-container .filters-body .filter-duration{
+    margin-top: 16px;
+}
+
+.filters-container .filters-body .filter-gender{
+    margin-top: 35px;
+}
+.filters-container .filters-body .filter-rate{
+    margin-top: 35px;
+}
+.filters-body .filter-rate .rating:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0,0,0,0);
+}
+.filters-body .filter-rate .rating:not(:checked)>label {
+    float: left;
+}
+.filters-body .filter-rate fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.filters-body .filter-rate .rating:not(:checked)>label {
+    float: right;
+    width: 1em;
+    padding: .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 165%;
+    line-height: 1.2;
+    color: #ddd;
+    margin-bottom: 0;
+}
+.filters-body .filter-rate .rating:not(:checked)>label:hover {
+    color: #ea0!important;
+}
+.filters-body .filter-rate .rating:not(:checked)>label:before {
+     content: "★ ";
+ }
+.filters-container .filters-body .filter-region{
+    margin-top: 35px;
+}
+.filters-container .filters-body .filter-price{
+    margin-top: 35px;
+}
+
+.filters-container .filters-body .fees-filter{
+    margin-top: 12px!important;
+    font-size: 12px!important;
+
+}
+.filters-container .filters-body .price-button{
+    padding: 4px;
+    margin-left: 12px;
+    margin-top: 8px;
+    border-radius: 2px;
+    background: #ccc;
+    color: #4d4d4f;
+    display: inline-block;
+}
+.filters-container .filters-body .price-button:hover{
+    background-color: #bfbfbf;
+}
+
+/*profile review*/
+
+.profile-review-container {
+    position: fixed;
+    background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    right: 58%;
+    top: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    max-width: 548px;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 1px;
+    z-index: 1051;
+    -webkit-animation-fill-mode: initial!important;
+    animation-fill-mode: none!important;
+    -webkit-animation-name: slideRight;
+    animation-name: slideRight;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-delay: 5;
+    animation-delay: 5;
+    transition-timing-function: ease-in;
+}
+.profile-review-container .doctor-pic {
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: 32px;
+}
+.profile-review-container .profile-details .doctor-name {
+    margin-top: 32px;
+    color: #3da8c0;
+    font-size: 16px;
+}
+.profile-review-container .profile-details .doctor-title {
+    margin-top: 8px;
+    color: #666669;
+    font-size: 12px;
+}
+.profile-review-container .profile-details .doctor-speciality {
+    margin-top: 8px;
+    color: #666669;
+    font-size: 12px;
+}
+.profile-review-container .profile-details .session-details {
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color: #666669;
+    font-size: 13px;
+}
+.close_btn {
+    display: none!important;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+.profile-review-container .date-type {
+    padding-bottom: 8px!important;
+    padding-top: 8px!important;
+    background: #3da8c0;
+    color: #fff;
+    font-size: 16px!important;
+    text-align: center!important;
+    border: 1px solid #3da8c0;
+}
+.profile-review-container .date-type.active {
+    background: #fff!important;
+    color: #3da8c0!important;
+}
