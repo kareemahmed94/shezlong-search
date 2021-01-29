@@ -391,12 +391,21 @@ body {
 
 /*profile review*/
 
+.black-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+}
+
 .profile-review-container {
+    right: auto;
+    left: -100%;
     position: fixed;
     background: #fff;
     overflow-y: scroll;
     overflow-x: hidden;
-    right: 58%;
     top: 0;
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
@@ -405,16 +414,9 @@ body {
     border-style: solid;
     border-width: 0 1px;
     z-index: 1051;
-    -webkit-animation-fill-mode: initial!important;
-    animation-fill-mode: none!important;
-    -webkit-animation-name: slideRight;
-    animation-name: slideRight;
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s;
-    -webkit-animation-delay: 5;
-    animation-delay: 5;
-    transition-timing-function: ease-in;
+    text-align: center;
 }
+
 .profile-review-container .doctor-pic {
     max-width: 100%;
     width: 120px;
@@ -453,13 +455,79 @@ body {
 .profile-review-container .date-type {
     padding-bottom: 8px!important;
     padding-top: 8px!important;
-    background: #3da8c0;
-    color: #fff;
+    color: #3da8c0;
+    background-color: #fff;
     font-size: 16px!important;
     text-align: center!important;
     border: 1px solid #3da8c0;
 }
+.profile-review-container .reserve-now {
+    background: #3da8c0;
+    margin-top: 16px!important;
+    opacity: .65;
+    padding-bottom: 8px!important;
+    padding-top: 8px!important;
+    margin-bottom: 20px!important;
+    border-radius: 22px;
+    color: #fff;
+    width: 50%;
+    border: 0;
+}
 .profile-review-container .date-type.active {
-    background: #fff!important;
-    color: #3da8c0!important;
+    color: #fff!important;
+    background-color: #3da8c0!important;
+}
+
+.appointments-block {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: #f5f5f5;
+
+}
+
+.appointments {
+    margin-top: 16px!important;
+}
+
+.appointments-item {
+    padding-top: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #4d4d4f;
+    text-align: center!important;
+    margin-right: 12px;
+
+}
+.appointments-item .item-title{
+    min-height: 50px;
+    padding: 5px!important;
+    color: #363636;
+    font-size: 14px!important;
+
+}
+.appointments-item .item-title span{
+    color: #939598;
+}
+
+.appointments-item .item-details{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 5px;
+    margin-top: 5px;
+    align-items: center;
+
+}
+
+.appointments-item .item-details .appointment-item-duration{
+    color: #3da8c0;
+    font-size: 10px;
+}
+
+.appointments-item .item-details .appointment-item-from{
+    font-size: 12px;
+}
+.appointments-item .item-details .appointment-item-to{
+    font-size: 12px;
 }
