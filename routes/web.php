@@ -14,4 +14,7 @@ use App\Http\Controllers\TherapistController;
 |
 */
 
+Route::get('/api/therapist/search', [\App\Http\Controllers\API\TherapistController::class , 'get_therapist_card'])->name('api.therapist.search');
+Route::get('/api/therapist/profile_review', [\App\Http\Controllers\API\TherapistController::class , 'get_profile_review'])->name('api.therapist.profile_review');
+
 Route::get('/', [TherapistController::class , 'search']);

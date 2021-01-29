@@ -17,7 +17,7 @@ class CreateTherapistsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('title');
-            $table->longText('about');
+            $table->longText('mainSpec');
             $table->text('avatar')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

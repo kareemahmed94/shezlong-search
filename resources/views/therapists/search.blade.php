@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
     <div class="search-page">
         {{--    header sterpper--}}
         <div class="therapist-header">
@@ -28,24 +29,17 @@
                         <span class="input-group-text">
                             <img src="{{ asset('assets/images/search/search-icon.svg') }}">
                         </span>
-
-                            <input type="text" class="form-control" placeholder="بحث بأسم المعالج">
+                            <input id="doctor_name" type="text" class="form-control" onkeyup="get_doctor_card('search')"
+                                   placeholder="بحث بأسم المعالج">
                         </div>
                     </div>
                     <div class="col-md-3 col-3 no-sm-p">
                         <div class=" search-icon">
-                            <select class="form-select" aria-label="Categories"
-                                    style="border: 1px solid #ced4da!important;">
+                            <select id="category_id" class="form-select" aria-label="Categories" onchange="get_doctor_card('search')" style="border: 1px solid #ced4da!important;">
                                 <option selected>جميع التخصصات</option>
-                                <option value="1">مشاكل الأطفال</option>
-                                <option value="2">مشاكل المراهقة</option>
-                                <option value="3">الاكتئاب</option>
-                                <option value="3">القلق والوسواس</option>
-                                <option value="3">استشارات الزواج / مشاكل العلاقات</option>
-                                <option value="3">اضطرابات الفصام</option>
-                                <option value="3">الإدمان</option>
-                                <option value="3">المشاكل الجنسية</option>
-                                <option value="3">مشاكل الشيخوخة</option>
+                                @foreach(\App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -419,24 +413,11 @@
                         <div class="row">
                             <div class="col-12"></div>
                             <div class="col-12 ">
-                                <div class="row mx-md-n2 row-eq-height">
-                                    <div class="col-lg-4 col-md-6 px-md-2 mb16 ">
-                                        <div class="recommendation-card">
-                                            <img src="{{ asset('assets/images/search/recommendation-card-bg.svg') }}"
-                                                 class="recommended-image">
-                                            <div class="recommendation-content">
-                                                <div class="text-white fbold fz16">لا أعرف كيفية</div>
-                                                <div class="text-white fbold fz16">اختيار المعالج المناسب؟</div>
-                                            </div>
-                                            <div class="mt32 mb32 d-flex justify-content-center">
-                                                <div class="recommendation-btn pointer fz14 pr32 pl32 pt8 pb8">
-                                                    ترشيحات شيزلونج
-                                                </div>
-                                            </div>
+                                <div class="row doctor-card-container">
+                                    <div class="text-center loader" style="display:none;">
+                                        <div class="spinner-border text-info" role="status">
+                                            <span class="sr-only">Loading...</span>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 px-md-2 mb16 doctor-card-container ">
-
                                     </div>
 
                                 </div>
@@ -448,9 +429,92 @@
             </div>
         </div>
     </div>
-    @include('partials.therapist_review_profile')
+    <div id="profile-review">
+    </div>
+    <div class="text-center loader" style="display:none;">
+        <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
 @stop
 
 @section('script')
+    <script>
+        $(document).ready(function () {
+            get_doctor_card()
+            get_next_page()
+            check_responsive()
+        });
 
+        function check_responsive() {
+            if ($(window).width() < 960) {
+                $(".therapist-header").hide()
+                $(".filters-container").hide()
+            } else {
+                $(".therapist-header").show()
+                $(".filters-container").show()
+            }
+        }
+        function get_next_page() {
+            $(window).scroll(function() {
+                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    get_doctor_card();
+                    $(window).scrollTop($(".doctor-card-container").scrollTop());
+                }
+            });
+        }
+
+        function get_profile() {
+            $.ajax({
+                url: "{{ route('api.therapist.profile_review') }}",
+                type: 'GET',
+            }).then((data) => {
+                $("#profile-review").html(data);
+                $('.appointments').slick({
+                    infinite: true,
+                    rtl: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    focusOnSelect: false
+                });
+                $(".profile-review-container").css({
+                    left: 0,
+                    transition: '.5s'
+                });
+            });
+        }
+
+        function hide_profile() {
+            $(".profile-review-container").css({
+                left: '-100%',
+                transition: '.5s'
+            });
+            $("#profile-review").html('')
+
+        }
+
+        function get_doctor_card(type) {
+            $(".loader").show();
+            let page_num ;
+
+            if (type == 'search') {
+                page_num = 1;
+            } else {
+                page_num = $("#current-page").data('page') ? $("#current-page").data('page')+1 : 1;
+            }
+            $.ajax({
+                url: "{{ route('api.therapist.search') }}",
+                type: 'GET',
+                data: {
+                    'page': page_num,
+                    'q': $("#doctor_name").val(),
+                    'category': $("#category_id").val(),
+                },
+            }).then((data) => {
+                $(".loader").hide()
+                $(".doctor-card-container").html(data);
+            });
+        }
+    </script>
 @stop

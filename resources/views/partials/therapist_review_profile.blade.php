@@ -1,63 +1,5 @@
-<style>
 
-    /*body {*/
-    /*    margin-bottom: 40px;*/
-    /*    margin-top: 40px;*/
-    /*    text-align: center;*/
-    /*    font-size: 14px;*/
-    /*    font-family: 'Roboto', sans-serif;*/
-    /*    background:url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);*/
-    /*}*/
-
-    #wrap {
-        width: 1100px;
-        margin: 20px 35px;
-    }
-
-    #external-events {
-        float: left;
-        width: 150px;
-        padding: 0 10px;
-        text-align: left;
-    }
-
-    #external-events h4 {
-        font-size: 16px;
-        margin-top: 0;
-        padding-top: 1em;
-    }
-
-    .external-event { /* try to mimick the look of a real event */
-        margin: 10px 0;
-        padding: 2px 4px;
-        background: #3366CC;
-        color: #fff;
-        font-size: .85em;
-        cursor: pointer;
-    }
-
-    #external-events p {
-        margin: 1.5em 0;
-        font-size: 11px;
-        color: #666;
-    }
-
-    #external-events p input {
-        margin: 0;
-        vertical-align: middle;
-    }
-
-    #calendar {
-        width: 450px;
-        float: right;
-        background-color: #FFFFFF;
-        border-radius: 6px;
-        border: 1px solid #ccc!important;
-    }
-
-</style>
-<div id="profile-review">
-    <div class="black-bg"></div>
+    <div class="black-bg profile-background" onclick="hide_profile()"></div>
     <div class="profile-review-container" >
         <div class="row">
             <div class="offset-md-2 col-md-9">
@@ -732,7 +674,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <script>
 
@@ -750,17 +691,7 @@
         }
     }
     $(document).ready(function () {
-        $(".profile-review-container").css({
-            left: 0,
-            transition: '1s'
-        });
-        $('.appointments').slick({
-            infinite: true,
-            rtl: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            focusOnSelect: false
-        });
+
 
         var date = new Date();
         var d = date.getDate();

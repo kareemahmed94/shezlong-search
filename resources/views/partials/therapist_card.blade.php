@@ -1,4 +1,23 @@
+<div id="current-page" data-page="{{ $therapists->currentPage() }}"></div>
+
+<div class="col-lg-4 col-md-6 px-md-2 mb16 " style="margin-bottom: 16px">
+    <div class="recommendation-card">
+        <img src="{{ asset('assets/images/search/recommendation-card-bg.svg') }}"
+             class="recommended-image">
+        <div class="recommendation-content">
+            <div class="text-white fbold fz16">لا أعرف كيفية</div>
+            <div class="text-white fbold fz16">اختيار المعالج المناسب؟</div>
+        </div>
+        <div class="mt32 mb32 d-flex justify-content-center">
+            <div class="recommendation-btn pointer fz14 pr32 pl32 pt8 pb8">
+                ترشيحات شيزلونج
+            </div>
+        </div>
+    </div>
+</div>
 @foreach($therapists as $key => $therapist)
+    <div class="col-lg-4 col-md-6 px-md-2 mb16 " style="margin-bottom: 16px">
+
     <div class="doctor-card">
         <div class="therapist-details ">
             <div class="profile-pic-container">
@@ -6,7 +25,7 @@
             </div>
             <div class="profile-details text-md-center text-center sm-ml16">
                 <div class="mt8 d-flex align-items-center justify-content-center">
-                    <div class="fz16 text-blue name">{{ $therapist->title }}</div>
+                    <div class="fz16 text-blue name">{{ $therapist->name }}</div>
                 </div>
                 <div class="title mt8">{{ $therapist->title }}</div>
                 <div class="rate">
@@ -29,10 +48,11 @@
                     (<span class="rate-count">226 تقييم</span>)
                 </div>
             </div>
-            <div class="speciality fmedium mt8">متخصص فى
-                @foreach($therapist->categories as $cat_key => $category)
-                    {{ $category->name }} {{ $cat_key > 0 ? ', ' : '' }}
-                @endforeach
+            <div class="speciality fmedium mt8">
+                @if($therapist->mainSpec)
+                    متخصص فى
+                    {{ $therapist->mainSpec }}
+                @endif
             </div>
             <div class="session-details">
                 <span class="fees">
@@ -41,16 +61,20 @@
                             <style>.cls-1-fees {
                                     fill: #3da8c0;
                                 }
+
                                 .cls-2-fees, .cls-3-fees {
                                     fill: #fff;
                                 }
+
                                 .cls-3-fees {
                                     stroke: #fff;
                                     stroke-width: 0.8px;
                                 }
+
                                 .cls-3-fees, .cls-4-fees {
                                     stroke-miterlimit: 10;
                                 }
+
                                 .cls-4-fees {
                                     fill: none;
                                     stroke: #3da8c0;
@@ -92,6 +116,7 @@
                                 .cls-1-video {
                                     fill: #3da8c0;
                                 }
+
                                 .cls-2-video {
                                     fill: #f4794c;
                                 }</style>
@@ -110,8 +135,9 @@
             </div>
         </div>
         <div class="buttons">
-            <div class="book fz14 fz-rtl13">الحجز الان</div>
+            <div id="reserve-now-btn" class="book fz14 fz-rtl13" onclick="get_profile()">الحجز الان</div>
             <div class="view-profile fz-rtl12">عرض الصفحة الشخصية</div>
         </div>
+    </div>
     </div>
 @endforeach

@@ -12,10 +12,14 @@ class TherapistController extends Controller
     {
         $therapists = Therapist::latest();
 
-        if ($request->input('key')) {
-            $therapists = $therapists->where('name' , 'like' , '%'.$request->input('key').'%');
+        if ($request->input('q')) {
+            $therapists = $therapists->where('name' , 'like' , '%'.$request->input('q').'%');
         }
         $therapists = $therapists->paginate(20);
         return view('partials.therapist_card' , compact('therapists'));
+    }
+    public function get_profile_review(Request $request)
+    {
+        return view('partials.therapist_review_profile');
     }
 }
